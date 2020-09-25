@@ -6,9 +6,9 @@ import './index.css';
 export default function ForecastParams() {
     return (
         <form noValidate autoComplete="off" className="forecast-params">
-            <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}><TextField id="zipcode" label="Zip Code" /></Grid>
-                <Grid item xs={12} sm={6}>
+            <Grid container justify="center" spacing={2}>
+                <Grid item><TextField id="zipcode" label="Zip Code" /></Grid>
+                <Grid item>
                     <TextField
                         id="days-number"
                         label="Days Number"
