@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 // import './index.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import App from './App';
+import App from './components/App';
 import { getStore } from './store'
 import * as serviceWorker from './serviceWorker';
 
