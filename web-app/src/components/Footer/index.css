@@ -5,6 +5,6 @@
     color: white;
 }
 
-.app-footer a:visited, .app-footer a:active {
+.app-footer a, .app-footer a:visited, .app-footer a:active {
     color: white;
 }
