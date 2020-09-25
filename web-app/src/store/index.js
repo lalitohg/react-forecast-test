@@ -11,15 +11,15 @@ export function getStore() {
     let store;
     if (!storeIsCreated) {
         store = createStore(
-          rootReducer,
-          composeEnhancers(
-              applyMiddleware(epicMiddleware)
-          )
+            rootReducer,
+            composeEnhancers(
+                applyMiddleware(epicMiddleware)
+            )
         );
-      
+
         epicMiddleware.run(rootEpic);
         storeIsCreated = true;
     }
 
-  return store;
+    return store;
 }
