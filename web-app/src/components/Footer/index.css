@@ -1,0 +1,10 @@
+.app-footer {
+    height: 40px;
+    padding: 8px;
+    background-color: navy;
+    color: white;
+}
+
+.app-footer a:visited, .app-footer a:active {
+    color: white;
+}
