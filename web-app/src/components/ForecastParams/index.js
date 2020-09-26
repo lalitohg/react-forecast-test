@@ -8,7 +8,6 @@ import { updateZipcode, updateDays } from '../../store/actions/params.actions';
 import './index.css';
 
 export default function ForecastParams() {
-    // const defaultDays = useSelector(state => state.params.days);
     const [days, setDays] = useState(useSelector(state => state.params.days));
     const dispatch = useDispatch();
     const zipcode$ = new Subject();
