@@ -1,7 +1,7 @@
 import * as paramsActions from '../actions/params.actions';
 
 const initialState = {
-    zipcode: 37188,
+    zipcode: '',
     days: 5
 };
 
