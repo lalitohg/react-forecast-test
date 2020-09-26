@@ -1,4 +1,6 @@
 import { combineEpics } from 'redux-observable';
-// todo - import other epics to use in combineEpics()
+import * as paramsEpics from './params.epics';
 
-export const rootEpic = combineEpics();
+export const rootEpic = combineEpics(
+    paramsEpics.updateZipcode
+);

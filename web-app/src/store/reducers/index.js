@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
-// todo - import other reducers to be used in combineReducers
+import paramsReducer from './params.reducer';
+import displayReducer from './display.reducer';
 
-export const rootReducer = combineReducers({});
+export const rootReducer = combineReducers({params: paramsReducer, display: displayReducer});
