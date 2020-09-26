@@ -1,4 +1,4 @@
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { ajax } from "rxjs/ajax";
 
 const URL = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day';

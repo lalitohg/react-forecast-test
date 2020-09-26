@@ -25,7 +25,12 @@ export default function ForecastParams() {
         days$.next(newDays);
     };
     
-    zipcode$.pipe(debounceTime(500)).subscribe(zipcode => dispatch(updateZipcode(zipcode)));
+    zipcode$.pipe(debounceTime(500)).subscribe(zipcode => {
+        if (zipcode === '') {
+            return;
+        }
+        dispatch(updateZipcode(zipcode))
+    });
     days$.pipe(debounceTime(500)).subscribe(days => {
         setDays(days);
         dispatch(updateDays(days));
