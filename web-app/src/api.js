@@ -11,6 +11,6 @@ export const getForecast = (zipcode, days) => {
     }
     return ajax.getJSON(`${URL}/${zipcode}?apikey=${accuWeatherAppKey}`)
     .pipe(
-        map(response => response.DailyForecasts.slice(0, days))
+        map(response => response.DailyForecasts)
     );
 };

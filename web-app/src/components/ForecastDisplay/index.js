@@ -11,6 +11,7 @@ import './index.css';
 export default function ForecastDisplay() {
     const showLoader = useSelector(state => state.display.loading);
     const forecastItems = useSelector(state => state.display.forecastItems);
+    const days = useSelector(state => state.params.days);
     return (
         <Box className="forecast-display">
             {showLoader && <Box style={{ textAlign: 'center' }}><img alt='' src={loader}></img></Box>}
@@ -18,7 +19,7 @@ export default function ForecastDisplay() {
                 <Box style={{ textAlign: 'center' }}><Typography variant="h2">No data to display</Typography></Box> :
                 <Container>
                     <Grid container justify="space-between" spacing={2}>
-                        {forecastItems.map(item =>
+                        {[...forecastItems].slice(0, days).map(item =>
                             <Grid key={item.Date} item>
                                 <ForecastItem
                                     date={new Date(item.Date).toString().substr(0, 10)}
