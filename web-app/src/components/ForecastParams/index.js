@@ -12,7 +12,9 @@ export default function ForecastParams() {
     const dispatch = useDispatch();
     const zipcode$ = new Subject();
     const days$ = new Subject();
+
     const handleZipcodeChange = e => zipcode$.next(e.target.value);
+
     const handleDaysChange = e => {
         const newDays = parseInt(e.target.value, 10);
         if (newDays < 1) {
@@ -25,13 +27,11 @@ export default function ForecastParams() {
         days$.next(newDays);
     };
     
-    zipcode$.pipe(debounceTime(500)).subscribe(zipcode => {
-        if (zipcode === '') {
-            return;
-        }
-        dispatch(updateZipcode(zipcode))
-    });
-    days$.pipe(debounceTime(500)).subscribe(days => {
+    zipcode$.pipe(
+        debounceTime(500)
+    ).subscribe(zipcode => dispatch(updateZipcode(zipcode)));
+
+    days$.subscribe(days => {
         setDays(days);
         dispatch(updateDays(days));
     });
