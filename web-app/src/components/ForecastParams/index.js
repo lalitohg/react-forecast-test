@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { updateZipcode, updateDays } from '../../store/actions/params.actions';
+import { updateLoading } from '../../store/actions/display.actions';
 import './index.css';
 
 export default function ForecastParams() {
@@ -29,7 +30,9 @@ export default function ForecastParams() {
     
     zipcode$.pipe(
         debounceTime(500)
-    ).subscribe(zipcode => dispatch(updateZipcode(zipcode)));
+    ).subscribe(zipcode => {
+        dispatch(updateLoading(true))
+        dispatch(updateZipcode(zipcode))});
 
     days$.subscribe(days => {
         setDays(days);

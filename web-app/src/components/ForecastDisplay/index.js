@@ -15,7 +15,7 @@ export default function ForecastDisplay() {
     return (
         <Box className="forecast-display">
             {showLoader && <Box style={{ textAlign: 'center' }}><img alt='' src={loader}></img></Box>}
-            {!forecastItems.length ?
+            {!showLoader && (!forecastItems.length ?
                 <Box style={{ textAlign: 'center' }}><Typography variant="h2">No data to display</Typography></Box> :
                 <Container>
                     <Grid container justify="space-between" spacing={2}>
@@ -32,7 +32,7 @@ export default function ForecastDisplay() {
                             </Grid>
                         )}
                     </Grid>
-                </Container>
+                </Container>)
             }
         </Box>
     );
